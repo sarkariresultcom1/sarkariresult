@@ -3,175 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarkari Exam Results | Job Portal Clone</title>
+    <title>Sarkari Result</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to mimic the specific 'retro' utilitarian look */
+        /* Modern & Unique Styling */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6; /* Softer gray background */
         }
+        
+        /* Modern Gradient Header */
         .sarkari-header {
-            background-color: #ab1e1e; /* Iconic dark red header */
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); /* Royal Blue Gradient */
+            color: white;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fca5a5;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
         .nav-link:hover {
-            background-color: #ffffff;
-            color: #000000;
+            color: #fca5a5;
         }
+
+        /* Card Headers with Gradients */
         .box-header-result {
-            background-color: #ef4444; /* Red for Results */
-            border: 1px solid #b91c1c;
+            background: linear-gradient(to right, #b91c1c, #ef4444); /* Deep Red Gradient */
         }
         .box-header-admit {
-            background-color: #3b82f6; /* Blue for Admit Card */
-            border: 1px solid #1d4ed8;
+            background: linear-gradient(to right, #1d4ed8, #3b82f6); /* Deep Blue Gradient */
         }
         .box-header-jobs {
-            background-color: #22c55e; /* Green/Dark for Jobs (sometimes black, using green for contrast) */
-            border: 1px solid #15803d;
+            background: linear-gradient(to right, #15803d, #22c55e); /* Deep Green Gradient */
         }
+
+        /* Modern Box Container */
         .box-container {
-            border: 2px solid #000;
             background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden; /* Keeps content inside rounded corners */
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+        .box-container:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
         .link-item {
             display: block;
-            color: #0000EE;
+            color: #374151; /* Dark gray text */
             text-decoration: none;
-            padding: 4px 8px;
+            padding: 8px 12px;
             font-size: 14px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f3f4f6;
+            transition: all 0.2s;
+            position: relative;
+            padding-left: 20px;
+        }
+        .link-item::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: #9ca3af;
         }
         .link-item:hover {
-            text-decoration: underline;
-            color: #ff0000;
+            background-color: #f9fafb;
+            color: #2563eb; /* Blue highlight */
+            padding-left: 24px; /* Subtle slide effect */
         }
+        .link-item:hover::before {
+            color: #2563eb;
+        }
+
         .marquee-container {
-            background-color: #000;
-            color: white;
-            padding: 8px 0;
+            background: linear-gradient(to right, #111827, #374151);
+            color: #fbbf24;
+            padding: 10px 0;
             white-space: nowrap;
             overflow: hidden;
-            font-weight: bold;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .scrolling-text {
             display: inline-block;
-            animation: scroll 20s linear infinite;
+            animation: scroll 25s linear infinite;
         }
         @keyframes scroll {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
+
         .section-header {
             color: white;
-            font-weight: bold;
+            font-weight: 700;
             text-align: center;
-            padding: 10px;
-            font-size: 1.2rem;
+            padding: 12px;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
+        /* Featured Tiles Redesign */
         .tile-box {
             background: #fff;
-            border: 1px solid #ccc;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             text-align: center;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 15px;
             font-weight: bold;
-            color: #000;
-            transition: transform 0.2s;
+            color: #1f2937;
+            transition: all 0.3s;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
+        .tile-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+        .tile-color-blue::before { background-color: #2563eb; }
+        .tile-color-green::before { background-color: #16a34a; }
+        .tile-color-red::before { background-color: #dc2626; }
+        .tile-color-purple::before { background-color: #9333ea; }
+
         .tile-box:hover {
-            transform: scale(1.02);
-            background-color: #fffae6;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
         }
+
+        /* Info Section Styling */
         .info-header {
-            background-color: #ab1e1e;
+            background: linear-gradient(to right, #374151, #4b5563);
             color: white;
             font-weight: bold;
-            padding: 8px;
+            padding: 10px 15px;
             font-size: 1.1rem;
-            text-align: center;
-            border: 1px solid #800000;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 2px solid #fbbf24;
         }
         .info-content {
-            border: 1px solid #ccc;
+            border: 1px solid #e5e7eb;
+            border-top: none;
             background: #fff;
-            padding: 15px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #4b5563;
             text-align: justify;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .custom-btn {
+            background-color: #f3f4f6;
+            color: #374151;
+            font-weight: 600;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .custom-btn:hover {
+            background-color: #e5e7eb;
+            color: #111827;
         }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
     <!-- Top Header / Logo Area -->
-    <header class="sarkari-header text-white p-4 text-center shadow-lg">
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase">Sarkari Portal</h1>
-        <p class="text-sm md:text-lg mt-1 font-light">www.SarkariPortal.com</p>
+    <header class="sarkari-header text-center p-6 shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-white opacity-5 transform -skew-x-12 translate-x-1/2"></div>
+        <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase relative z-10 drop-shadow-md">
+            Sarkari<span class="text-yellow-400">Result</span>
+        </h1>
+        <p class="text-sm md:text-lg mt-2 font-medium text-blue-100 relative z-10 tracking-wide">
+            India's Most Trusted Job & Exam Result Platform
+        </p>
     </header>
 
     <!-- Navigation Bar -->
-    <nav class="bg-black text-white text-sm md:text-base sticky top-0 z-50">
-        <ul class="flex flex-wrap justify-center space-x-2 md:space-x-6 p-2 font-bold">
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Home</a></li>
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Latest Jobs</a></li>
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Results</a></li>
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Admit Card</a></li>
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Answer Key</a></li>
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Syllabus</a></li>
-            <li><a href="#" class="nav-link px-3 py-1 rounded transition">Contact Us</a></li>
-        </ul>
+    <nav class="bg-gray-900 text-white text-sm md:text-base sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center space-x-1 md:space-x-8 p-3 font-semibold">
+                <li><a href="#" class="nav-link px-3 py-2 block">Home</a></li>
+                <li><a href="#" class="nav-link px-3 py-2 block">Latest Jobs</a></li>
+                <li><a href="#" class="nav-link px-3 py-2 block">Results</a></li>
+                <li><a href="#" class="nav-link px-3 py-2 block">Admit Card</a></li>
+                <li><a href="#" class="nav-link px-3 py-2 block">Answer Key</a></li>
+                <li><a href="#" class="nav-link px-3 py-2 block">Syllabus</a></li>
+                <li><a href="#" class="nav-link px-3 py-2 block">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Marquee Section -->
-    <div class="marquee-container border-b-2 border-yellow-400">
+    <div class="marquee-container">
         <div class="scrolling-text">
-            <span class="mx-4 text-yellow-300">New Update:</span> UPSC Civil Services Prelims Result Declared 2024
-            <span class="mx-4 text-yellow-300">|</span> SSC CGL 2024 Notification Out Apply Online
-            <span class="mx-4 text-yellow-300">|</span> IBPS PO Mains Admit Card Download Now
-            <span class="mx-4 text-yellow-300">|</span> Bihar Police Constable Exam Date Announced
-            <span class="mx-4 text-yellow-300">|</span> Railway Group D Fee Refund Link Active
+            <span class="mx-4 text-yellow-400">⚡ New Update:</span> UPSC Civil Services Prelims Result Declared 2024
+            <span class="mx-4 text-blue-400">●</span> SSC CGL 2024 Notification Out Apply Online
+            <span class="mx-4 text-green-400">●</span> IBPS PO Mains Admit Card Download Now
+            <span class="mx-4 text-red-400">●</span> Bihar Police Constable Exam Date Announced
+            <span class="mx-4 text-purple-400">●</span> Railway Group D Fee Refund Link Active
         </div>
     </div>
 
     <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto p-2 md:p-4">
+    <main class="flex-grow container mx-auto p-4 md:p-6 max-w-7xl">
         
         <!-- Welcome / Intro Text -->
-        <div class="text-center mb-6">
-            <h2 class="text-xl font-bold text-red-700">No. 1 Job Portal of India for Sarkari Naukri</h2>
-            <p class="text-gray-600 text-sm mt-1">Welcome to Sarkari Portal. Find all latest Government Jobs, Results, Admit Cards, and Answer Keys here.</p>
+        <div class="text-center mb-8 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <h2 class="text-2xl font-bold text-gray-800">No. 1 Job Portal of India for <span class="text-blue-700">Sarkari Naukri</span></h2>
+            <p class="text-gray-500 text-sm mt-2">Welcome to Sarkari Portal. Your one-stop destination for Government Jobs, Results, Admit Cards, and Answer Keys.</p>
         </div>
 
         <!-- Featured Tiles (Top Links) -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="tile-box border-l-4 border-blue-600">
-                <a href="#" class="text-blue-700 block">SSC GD Constable<br><span class="text-xs text-black">Apply Online</span></a>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="tile-box tile-color-blue">
+                <a href="#" class="text-blue-700 block text-lg">SSC GD Constable<br><span class="text-xs text-gray-500 font-normal uppercase tracking-wide">Apply Online</span></a>
             </div>
-            <div class="tile-box border-l-4 border-green-600">
-                <a href="#" class="text-green-700 block">UP Police Constable<br><span class="text-xs text-black">Admit Card</span></a>
+            <div class="tile-box tile-color-green">
+                <a href="#" class="text-green-700 block text-lg">UP Police Constable<br><span class="text-xs text-gray-500 font-normal uppercase tracking-wide">Admit Card</span></a>
             </div>
-            <div class="tile-box border-l-4 border-red-600">
-                <a href="#" class="text-red-700 block">Railway RPF SI/Constable<br><span class="text-xs text-black">Exam Date</span></a>
+            <div class="tile-box tile-color-red">
+                <a href="#" class="text-red-700 block text-lg">Railway RPF SI<br><span class="text-xs text-gray-500 font-normal uppercase tracking-wide">Exam Date</span></a>
             </div>
-            <div class="tile-box border-l-4 border-purple-600">
-                <a href="#" class="text-purple-700 block">Bihar STET 2024<br><span class="text-xs text-black">Download Result</span></a>
+            <div class="tile-box tile-color-purple">
+                <a href="#" class="text-purple-700 block text-lg">Bihar STET 2024<br><span class="text-xs text-gray-500 font-normal uppercase tracking-wide">Download Result</span></a>
             </div>
         </div>
 
         <!-- The Iconic 3-Column Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <!-- Column 1: Result -->
             <div class="box-container">
-                <div class="box-header-result section-header">
-                    RESULT
+                <div class="box-header-result section-header shadow-inner">
+                    <span class="inline-block mr-2">📋</span> RESULT
                 </div>
-                <div class="p-2 text-center">
-                    <ul class="text-left list-none space-y-1">
+                <div class="p-3 text-center">
+                    <ul class="text-left list-none space-y-0">
                         <li><a href="#" class="link-item">UPSC IAS Pre 2024 Result</a></li>
                         <li><a href="#" class="link-item">BPSC 69th Mains Result Declared</a></li>
                         <li><a href="#" class="link-item">SSC CHSL Tier 1 Result 2024</a></li>
@@ -183,20 +274,19 @@
                         <li><a href="#" class="link-item">JEE Advanced 2024 Result</a></li>
                         <li><a href="#" class="link-item">India Post GDS 3rd Merit List</a></li>
                         <li><a href="#" class="link-item">CRPF Constable Tradesman Result</a></li>
-                        <li><a href="#" class="link-item">Rajasthan Police Constable Result</a></li>
+                        <li><a href="#" class="link-item font-semibold text-red-600">View More Results »</a></li>
                     </ul>
-                    <button class="mt-4 text-xs bg-gray-200 px-2 py-1 hover:bg-gray-300 border border-gray-400">View More Results</button>
                 </div>
             </div>
 
             <!-- Column 2: Admit Card -->
             <div class="box-container">
-                <div class="box-header-admit section-header">
-                    ADMIT CARD
+                <div class="box-header-admit section-header shadow-inner">
+                    <span class="inline-block mr-2">🎫</span> ADMIT CARD
                 </div>
-                <div class="p-2 text-center">
-                    <ul class="text-left list-none space-y-1">
-                        <li><a href="#" class="link-item">SSC CGL Tier 1 Admit Card 2024</a></li>
+                <div class="p-3 text-center">
+                    <ul class="text-left list-none space-y-0">
+                        <li><a href="ssc_cgl.html" class="link-item">SSC CGL Tier 1 Admit Card 2024</a></li>
                         <li><a href="#" class="link-item">IBPS RRB Clerk Prelims Admit Card</a></li>
                         <li><a href="#" class="link-item">UGC NET June 2024 Admit Card</a></li>
                         <li><a href="#" class="link-item">Bihar Police Constable Admit Card</a></li>
@@ -205,21 +295,20 @@
                         <li><a href="#" class="link-item">Airforce Agniveer Vayu Admit Card</a></li>
                         <li><a href="#" class="link-item">Navy SSR / MR Admit Card 2024</a></li>
                         <li><a href="#" class="link-item">CTET July 2024 Pre Admit Card</a></li>
-                        <li><a href="#" class="link-item">BSF Head Constable Ministerial Hall Ticket</a></li>
+                        <li><a href="#" class="link-item">BSF Head Constable Hall Ticket</a></li>
                         <li><a href="#" class="link-item">CSIR UGC NET Admit Card</a></li>
-                        <li><a href="#" class="link-item">Rajasthan PTET Admit Card 2024</a></li>
+                        <li><a href="#" class="link-item font-semibold text-blue-600">View More Admit Cards »</a></li>
                     </ul>
-                    <button class="mt-4 text-xs bg-gray-200 px-2 py-1 hover:bg-gray-300 border border-gray-400">View More Admit Cards</button>
                 </div>
             </div>
 
             <!-- Column 3: Latest Jobs -->
             <div class="box-container">
-                <div class="box-header-jobs section-header">
-                    LATEST JOBS
+                <div class="box-header-jobs section-header shadow-inner">
+                    <span class="inline-block mr-2">💼</span> LATEST JOBS
                 </div>
-                <div class="p-2 text-center">
-                    <ul class="text-left list-none space-y-1">
+                <div class="p-3 text-center">
+                    <ul class="text-left list-none space-y-0">
                         <li><a href="#" class="link-item">SSC MTS Havaldar Online Form 2024</a></li>
                         <li><a href="#" class="link-item">Railway Group D Recruitment 2024</a></li>
                         <li><a href="#" class="link-item">Bihar Beltron DEO Online Form</a></li>
@@ -231,73 +320,74 @@
                         <li><a href="#" class="link-item">Coast Guard Navik GD/DB Online Form</a></li>
                         <li><a href="#" class="link-item">SBI PO Recruitment 2024</a></li>
                         <li><a href="#" class="link-item">Jharkhand Police Constable Form</a></li>
-                        <li><a href="#" class="link-item">UPSSSC Junior Assistant Mains Form</a></li>
+                        <li><a href="#" class="link-item font-semibold text-green-600">View More Jobs »</a></li>
                     </ul>
-                    <button class="mt-4 text-xs bg-gray-200 px-2 py-1 hover:bg-gray-300 border border-gray-400">View More Jobs</button>
                 </div>
             </div>
 
         </div>
 
         <!-- Secondary Sections (Answer Key, Syllabus, etc.) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             
             <!-- Answer Key -->
             <div class="box-container">
-                <div class="bg-orange-500 section-header border border-orange-700">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-400 section-header">
                     ANSWER KEY
                 </div>
-                <div class="p-2">
-                    <ul class="list-disc list-inside text-sm text-blue-800 space-y-2">
-                        <li><a href="#" class="hover:underline hover:text-red-600">NTA CUET UG 2024 Answer Key</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">SSC Selection Post Phase 12 Answer Key</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">UPSC Prelims 2024 Official Answer Key</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">Bihar BPSC Headmaster Answer Key</a></li>
+                <div class="p-4">
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-3">
+                        <li><a href="#" class="hover:underline hover:text-orange-600 transition">NTA CUET UG 2024 Answer Key</a></li>
+                        <li><a href="#" class="hover:underline hover:text-orange-600 transition">SSC Selection Post Phase 12 Answer Key</a></li>
+                        <li><a href="#" class="hover:underline hover:text-orange-600 transition">UPSC Prelims 2024 Official Answer Key</a></li>
+                        <li><a href="#" class="hover:underline hover:text-orange-600 transition">Bihar BPSC Headmaster Answer Key</a></li>
                     </ul>
+                    <div class="text-right mt-2"><button class="text-xs text-orange-600 font-bold hover:underline">View All</button></div>
                 </div>
             </div>
 
             <!-- Syllabus -->
             <div class="box-container">
-                <div class="bg-teal-600 section-header border border-teal-800">
+                <div class="bg-gradient-to-r from-teal-600 to-teal-500 section-header">
                     SYLLABUS
                 </div>
-                <div class="p-2">
-                    <ul class="list-disc list-inside text-sm text-blue-800 space-y-2">
-                        <li><a href="#" class="hover:underline hover:text-red-600">SSC CGL 2024 Syllabus & Exam Pattern</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">UP Police Constable Syllabus</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">Railway RPF SI Syllabus 2024</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">UGC NET Syllabus PDF Download</a></li>
+                <div class="p-4">
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-3">
+                        <li><a href="#" class="hover:underline hover:text-teal-600 transition">SSC CGL 2024 Syllabus & Exam Pattern</a></li>
+                        <li><a href="#" class="hover:underline hover:text-teal-600 transition">UP Police Constable Syllabus</a></li>
+                        <li><a href="#" class="hover:underline hover:text-teal-600 transition">Railway RPF SI Syllabus 2024</a></li>
+                        <li><a href="#" class="hover:underline hover:text-teal-600 transition">UGC NET Syllabus PDF Download</a></li>
                     </ul>
+                    <div class="text-right mt-2"><button class="text-xs text-teal-600 font-bold hover:underline">View All</button></div>
                 </div>
             </div>
 
             <!-- Admission -->
             <div class="box-container">
-                <div class="bg-purple-600 section-header border border-purple-800">
+                <div class="bg-gradient-to-r from-purple-600 to-purple-500 section-header">
                     ADMISSION
                 </div>
-                <div class="p-2">
-                    <ul class="list-disc list-inside text-sm text-blue-800 space-y-2">
-                        <li><a href="#" class="hover:underline hover:text-red-600">UP ITI Admission 2024 Online Form</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">Bihar B.Ed Admission Counseling</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">NTA NEET UG Counseling 2024</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">Delhi University UG Admission</a></li>
+                <div class="p-4">
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-3">
+                        <li><a href="#" class="hover:underline hover:text-purple-600 transition">UP ITI Admission 2024 Online Form</a></li>
+                        <li><a href="#" class="hover:underline hover:text-purple-600 transition">Bihar B.Ed Admission Counseling</a></li>
+                        <li><a href="#" class="hover:underline hover:text-purple-600 transition">NTA NEET UG Counseling 2024</a></li>
+                        <li><a href="#" class="hover:underline hover:text-purple-600 transition">Delhi University UG Admission</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Important -->
             <div class="box-container">
-                <div class="bg-indigo-600 section-header border border-indigo-800">
+                <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 section-header">
                     IMPORTANT
                 </div>
-                <div class="p-2">
-                    <ul class="list-disc list-inside text-sm text-blue-800 space-y-2">
-                        <li><a href="#" class="hover:underline hover:text-red-600">Aadhar Card Pan Card Link Status</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">UP Scholarship Online Form 2024</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">CRPF ASI Steno / HC Min Document List</a></li>
-                        <li><a href="#" class="hover:underline hover:text-red-600">NVSP Voter ID Card Apply Online</a></li>
+                <div class="p-4">
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-3">
+                        <li><a href="#" class="hover:underline hover:text-indigo-600 transition">Aadhar Card Pan Card Link Status</a></li>
+                        <li><a href="#" class="hover:underline hover:text-indigo-600 transition">UP Scholarship Online Form 2024</a></li>
+                        <li><a href="#" class="hover:underline hover:text-indigo-600 transition">CRPF ASI Steno / HC Min Document List</a></li>
+                        <li><a href="#" class="hover:underline hover:text-indigo-600 transition">NVSP Voter ID Card Apply Online</a></li>
                     </ul>
                 </div>
             </div>
@@ -305,38 +395,38 @@
         </div>
 
         <!-- NEW SEO CONTENT SECTION START -->
-        <div class="mt-8">
-            <div class="mb-4">
-                <h3 class="info-header">Sarkari Results 10+2 Latest Job</h3>
+        <div class="mt-12 space-y-6">
+            <div>
+                <h3 class="info-header">🚀 Sarkari Results 10+2 Latest Job</h3>
                 <div class="info-content">
                     Find the most recent Sarkari Jobs, Government Vacancies, and 10+2 Entry Level Jobs here. We update our portal daily with the latest Online and Offline Forms, Admit Cards, Prospectus, Admission details, Answer Keys, and Scholarship Notices. If you are looking for reliable updates on Sarkari Naukri, including Central Govt Exams, State Board Results (like Bihar Board, UP Board), and Defence Jobs, keep visiting SarkariPortal.com regularly for the fastest updates.
                 </div>
             </div>
 
-            <div class="mb-4">
-                <h3 class="info-header">About Sarkari Results Portal</h3>
+            <div>
+                <h3 class="info-header">ℹ️ About Sarkari Results Portal</h3>
                 <div class="info-content">
                     Sarkari Portal is India's leading website for government job aspirants. We provide accurate and timely data about Sarkari Work Tests, Exam Results 2025, and other related notifications. It is one of the most trusted entries that millions of work searchers use to secure data about Government Position Openings, Admit Cards (Hall Tickets), Test Dates, and Merit Lists across various sectors like Banking, Railway, SSC, and UPSC.
                 </div>
             </div>
 
-            <div class="mb-4">
-                <h3 class="info-header">Sarkari Result Bihar</h3>
+            <div>
+                <h3 class="info-header">📍 Sarkari Result Bihar</h3>
                 <div class="info-content">
                     All data connected with Sarkari Test Results in Bihar can be found here. We cover everything including: OFSS Bihar Admission, Bihar Board 10th (Matric) Outcome, Bihar Board 12th (Inter) Result 2025, Bihar Police Constable Recruitment, Bihar SSC (BSSC), Bihar Junior Engineer (JE), and Patna High Court Vacancies. Whether you are looking for Bihar Sarkari Naukri, BPSC updates, or 10+2 latest work in Bihar, this page is your one-stop destination for all Bihar Government Job alerts.
                 </div>
             </div>
 
-            <div class="mb-4">
-                <h3 class="info-header">Sarkari Result Hindi (UP & Other States)</h3>
+            <div>
+                <h3 class="info-header">🇮🇳 Sarkari Result Hindi (UP & Other States)</h3>
                 <div class="info-content">
                     Uttar Pradesh (UP) is a state where lakhs of young people give Sarkari Tests consistently to land Government Positions. Here, the UP Board plays a significant part. We provide instant updates for Sarkari Result UP Board 2024, UP Board High School (Class 10th) Result, UP Board Intermediate (Class 12th) Result, UP Police Constable, and UPSSSC vacancies. All information is available in both Hindi and English for your convenience.
                 </div>
             </div>
 
-            <div class="mb-4">
-                <h3 class="info-header">SarkariPortal Official Website Disclaimer</h3>
-                <div class="info-content">
+            <div>
+                <h3 class="info-header">⚠️ Disclaimer</h3>
+                <div class="info-content border-l-4 border-l-yellow-400">
                     <strong>SarkariPortal.com</strong> presents all the latest updates such as Results, Online Forms, Job Notifications, Exam Results 2025, Employment News, and Government Job Details. <br><br>
                     <em>Disclaimer:</em> This website is not associated with any Official or Government Websites. All information provided is for general informational purposes only. Users are advised to verify information from official notifications of the concerning department before relying on it. If any errors are found in the uploaded content, please notify us through our Contact Us page.
                 </div>
@@ -347,48 +437,34 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white mt-8 border-t-4 border-red-700">
-        <div class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+    <footer class="bg-gray-900 text-gray-300 mt-12 border-t-4 border-blue-600">
+        <div class="container mx-auto p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
             
             <div>
-                <h3 class="font-bold text-lg mb-2 text-yellow-400">Quick Links</h3>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                    <li><a href="#" class="hover:text-gray-300">About Us</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Disclaimer</a></li>
+                <h3 class="font-bold text-lg mb-4 text-white uppercase tracking-wider">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300">Disclaimer</a></li>
                 </ul>
             </div>
 
             <div>
-                <h3 class="font-bold text-lg mb-2 text-yellow-400">Download Apps</h3>
-                <p class="mb-2">Get updates on your mobile.</p>
-                <div class="flex space-x-2">
-                    <button class="bg-black border border-gray-600 px-3 py-1 rounded flex items-center">
-                        <span class="text-xs">Android App</span>
-                    </button>
-                    <button class="bg-black border border-gray-600 px-3 py-1 rounded flex items-center">
-                        <span class="text-xs">iOS App</span>
-                    </button>
+               
                 </div>
             </div>
 
             <div>
-                <h3 class="font-bold text-lg mb-2 text-yellow-400">Connect With Us</h3>
-                <p>Follow us on social media for instant updates.</p>
-                <div class="flex space-x-4 mt-2">
-                    <a href="#" class="text-blue-400 hover:text-white">Facebook</a>
-                    <a href="#" class="text-sky-400 hover:text-white">Twitter</a>
-                    <a href="#" class="text-pink-500 hover:text-white">Instagram</a>
-                    <a href="#" class="text-red-500 hover:text-white">YouTube</a>
+                
                 </div>
             </div>
 
         </div>
-        <div class="bg-black text-center p-2 text-xs text-gray-400">
-            &copy; 2024 Sarkari Job Portal Clone. All Rights Reserved. <br>
-            Disclaimer: This is a demo website created for educational purposes.
+        <div class="bg-black text-center p-4 text-xs text-gray-500">
+            &copy; 2025 Sarkari Result Portal Clone. All Rights Reserved. <br>
+            Designed with <span class="text-red-500">♥</span> for Educational Purposes.
         </div>
     </footer>
 
