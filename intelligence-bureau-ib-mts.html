@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB MTS Recruitment 2025 Online Form | Sarkari Result 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern Unique Design System */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f5f9; /* Slate-100 */
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Modern Header - IB Slate/Dark Theme */
+        .sarkari-header {
+            background: linear-gradient(120deg, #1e293b, #334155); /* Slate-800 to Slate-700 */
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .sarkari-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.05) 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fbbf24;
+            border-radius: 2px;
+            display: none;
+        }
+        .nav-link:hover::after {
+            display: block;
+        }
+        .nav-link:hover {
+            color: #fbbf24;
+        }
+
+        /* Card & Container Styles */
+        .post-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .post-title-box {
+            background: linear-gradient(to right, #0f172a, #1e293b); /* Deep dark for IB */
+            color: white;
+            text-align: center;
+            padding: 15px; /* Reduced for mobile */
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .post-title-box { padding: 20px; }
+        }
+        .post-title-box::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+
+        .section-heading {
+            background: linear-gradient(to right, #fffbeb, #fef3c7);
+            color: #b45309;
+            font-weight: 700;
+            padding: 12px 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            border-left: 5px solid #d97706;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        @media (min-width: 768px) {
+            .section-heading { font-size: 1.2rem; padding: 12px 20px; margin-top: 30px; }
+        }
+
+        /* Modern Table */
+        .table-custom {
+            width: 100%;
+            min-width: 600px; /* Ensures horizontal scroll on mobile */
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .table-custom th {
+            background-color: #334155;
+            color: white;
+            font-weight: 600;
+            padding: 12px 10px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .table-custom td {
+            background-color: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 12px 10px;
+            color: #475569;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .table-custom tr:last-child td {
+            border-bottom: none;
+        }
+        .table-custom tr:hover td {
+            background-color: #f1f5f9;
+        }
+        @media (min-width: 768px) {
+            .table-custom th, .table-custom td { padding: 15px; font-size: 1rem; }
+        }
+
+        /* Info Cards */
+        .info-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            background: white;
+        }
+        .info-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .info-card-header {
+            padding: 12px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+        @media (min-width: 768px) {
+            .info-card-header { padding: 15px; font-size: 0.9rem; }
+        }
+        
+        /* Links & Buttons */
+        .btn-download {
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+            display: block; /* Full width on mobile */
+            width: 100%;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+        .btn-download:hover {
+            box-shadow: 0 6px 10px rgba(37, 99, 235, 0.3);
+        }
+        @media (min-width: 768px) {
+            .btn-download { display: inline-block; width: auto; padding: 10px 20px; }
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        /* FAQ Accordion Style */
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: white;
+        }
+        .faq-question {
+            padding: 15px;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        .faq-answer {
+            padding: 15px;
+            padding-top: 0;
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-gray-700">
+
+    <!-- Header -->
+    <header class="sarkari-header text-center p-6 md:p-8 shadow-2xl z-10">
+        <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg leading-tight">
+            Sarkari<span class="text-yellow-400">Result </span>
+        </h1>
+        <p class="text-gray-300 mt-2 font-light tracking-widest text-xs md:text-sm uppercase">India's Most Trusted Job & Exam Result Platform</p>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white text-sm md:text-base sticky top-0 z-50 shadow-lg backdrop-blur-sm bg-opacity-95">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center gap-3 md:space-x-10 p-3 md:p-4">
+                <li><a href="index.html" class="nav-link px-2 block">Home</a></li>
+                <li><a href="#" class="nav-link px-2 block">Latest Jobs</a></li>
+                <li><a href="#" class="nav-link px-2 block">Results</a></li>
+                <li><a href="#" class="nav-link px-2 block">Admit Card</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Job Content -->
+    <main class="flex-grow container mx-auto p-3 md:p-8 max-w-6xl">
+
+        <div class="post-container mb-8 md:mb-10">
+            
+            <!-- Post Title -->
+            <div class="post-title-box">
+                <span class="text-xl md:text-2xl block">Intelligence Bureau (IB) MTS Recruitment 2025</span>
+                <span class="text-sm md:text-lg font-normal opacity-90 block mt-1">(362 Posts • Multi Tasking Staff)</span>
+            </div>
+
+            <div class="p-4 md:p-10">
+                
+                <!-- Short Info -->
+                <div class="text-center mb-8 md:mb-10">
+                    <span class="inline-block px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-bold mb-3 tracking-wide">MHA RECRUITMENT 2025</span>
+                    <h2 class="text-xl md:text-3xl font-bold text-gray-800 mb-2">Intelligence Bureau (Ministry of Home Affairs)</h2>
+                    <h3 class="text-sm md:text-lg text-gray-600 font-medium px-2">General Central Service, Group 'C' (Non-Gazetted, Non-Ministerial)</h3>
+                </div>
+
+                <!-- Important Dates & Fees Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    
+                    <!-- Dates Card -->
+                    <div class="info-card group">
+                        <div class="info-card-header bg-emerald-50 text-emerald-700 border-b border-emerald-100 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <span class="mr-2">📅</span> Important Dates
+                        </div>
+                        <div class="p-4 md:p-6 space-y-3 md:space-y-4 text-sm">
+                            <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-2">
+                                <span class="text-gray-500">Application Start</span>
+                                <span class="font-bold text-gray-800">22/11/2025</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-2">
+                                <span class="text-gray-500">Last Date to Apply</span>
+                                <span class="font-bold text-red-500">14/12/2025</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-2">
+                                <span class="text-gray-500">Pay Exam Fee Last Date</span>
+                                <span class="font-bold text-gray-800">14/12/2025</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-gray-500">Exam Date</span>
+                                <span class="status-badge bg-yellow-100 text-yellow-700 text-right">Notify Later</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fees Card -->
+                    <div class="info-card group">
+                        <div class="info-card-header bg-indigo-50 text-indigo-700 border-b border-indigo-100 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <span class="mr-2">💳</span> Application Fee
+                        </div>
+                        <div class="p-4 md:p-6 space-y-3 md:space-y-4 text-sm">
+                            <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-2">
+                                <span class="text-gray-500">Gen / OBC / EWS</span>
+                                <span class="font-bold text-gray-800">₹ 650/-</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-2">
+                                <span class="text-gray-500">SC / ST Categories</span>
+                                <span class="font-bold text-gray-800">₹ 550/-</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded text-xs text-gray-600 mt-2 text-center leading-relaxed">
+                                <span class="font-bold">Payment Mode:</span> Pay via Debit Card, Credit Card, Net Banking, IMPS, Cash Card, or Mobile Wallet.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Age Limit -->
+                <div class="mt-6 md:mt-8">
+                    <div class="section-heading">Age Limit (as on 14/12/2025)</div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 md:p-6 mt-4 flex flex-col md:flex-row justify-around items-center text-center gap-4 shadow-sm">
+                        <div class="w-full md:w-auto">
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">Minimum Age</p>
+                            <p class="text-2xl font-bold text-gray-800">18 Years</p>
+                        </div>
+                        <div class="h-px w-full md:h-10 md:w-px bg-amber-200"></div>
+                        <div class="w-full md:w-auto">
+                            <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">Maximum Age</p>
+                            <p class="text-2xl font-bold text-gray-800">25 Years</p>
+                        </div>
+                        <div class="h-px w-full md:h-10 md:w-px bg-amber-200"></div>
+                        <div class="text-sm text-gray-600 max-w-xs w-full md:w-auto">
+                            <span class="block font-bold text-amber-700 mb-1">Age Relaxation</span>
+                            Relaxation applicable for reserved categories as per IB Rules.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vacancy Details -->
+                <div class="mt-6 md:mt-8">
+                    <div class="section-heading">Vacancy Details • Total : 362 Posts</div>
+                    
+                    <!-- Vacancy Breakdown - Scrollable on Mobile -->
+                    <div class="overflow-x-auto rounded-lg border border-gray-200 mt-6">
+                        <table class="table-custom">
+                            <thead>
+                                <tr class="bg-gray-800 text-white">
+                                    <th class="text-left pl-6">Post Name</th>
+                                    <th>Total Post</th>
+                                    <th>Eligibility Criteria</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold text-gray-700 text-left pl-6">MTS (Multi Tasking Staff)</td>
+                                    <td class="font-bold text-lg text-blue-600">362</td>
+                                    <td class="text-left">
+                                        <ul class="list-disc list-inside text-sm">
+                                            <li>Candidates must have passed <strong>Class 10 (Matriculation)</strong> from a Government recognized Board/Institute.</li>
+                                            <li>Knowledge of Local Language.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Selection Process -->
+                    <div class="mt-6 bg-slate-50 border border-slate-200 rounded-lg p-5">
+                        <h3 class="text-slate-800 font-bold mb-3">Mode of Selection:</h3>
+                        <div class="flex flex-wrap gap-2 items-center">
+                            <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium mb-1">Tier-I Written Exam</span>
+                            <span class="text-slate-400 hidden md:inline">→</span>
+                            <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium mb-1">Tier-II Written Exam</span>
+                            <span class="text-slate-400 hidden md:inline">→</span>
+                            <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium mb-1">Document Verification</span>
+                            <span class="text-slate-400 hidden md:inline">→</span>
+                            <span class="px-3 py-1 bg-white border border-slate-300 rounded-full text-sm font-medium mb-1">Medical Exam</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hindi Note Section -->
+                <div class="mt-6 md:mt-8 bg-red-50 border border-red-200 rounded-lg p-4 md:p-5 shadow-sm">
+                    <h3 class="text-red-700 font-bold mb-2 flex items-center text-sm md:text-base">
+                        <span class="text-lg mr-2">⚠</span> Important Note
+                    </h3>
+                    <p class="text-xs md:text-sm text-gray-800 leading-relaxed font-medium">
+                        छात्रो से अनुरोध है कि फॉर्म भरने से पहले <strong>Official Notification</strong> को ध्यान से जरूर पढ़ें। (Last Date, Age Limit, & Education Qualification)
+                    </p>
+                </div>
+
+                <!-- Important Links Section -->
+                <div class="mt-8 md:mt-12">
+                    <div class="bg-gray-800 text-white p-3 md:p-4 rounded-t-xl text-center font-bold text-base md:text-lg tracking-wider">IMPORTANT LINKS</div>
+                    <div class="border-x border-b border-gray-200 rounded-b-xl overflow-hidden bg-white shadow-lg">
+                        <div class="grid grid-cols-1 divide-y divide-gray-100">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50 p-3 md:p-4 items-center transition-colors gap-2 md:gap-0">
+                                <div class="font-semibold text-gray-700 text-center md:text-left">Apply Online</div>
+                                <div>
+                                    <a href="https://cdn.digialm.com/EForms/configuredHtml/1258/96684/Index.html" class="btn-download">Click Here</a>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50 p-3 md:p-4 items-center transition-colors gap-2 md:gap-0">
+                                <div class="font-semibold text-gray-700 text-center md:text-left">Check Official Notification</div>
+                                <div>
+                                    <a href="https://www.mha.gov.in/en" class="btn-download bg-gray-600">Download PDF</a>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-50 p-3 md:p-4 items-center bg-blue-50 transition-colors gap-2 md:gap-0">
+                                <div class="font-semibold text-gray-700 text-center md:text-left flex items-center justify-center md:justify-start">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                    IB Official Website
+                                </div>
+                                <div class="text-center">
+                                    <a href="https://www.mha.gov.in/en" class="text-blue-600 font-bold hover:underline text-sm">Visit Website ↗</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section (SEO Optimized) -->
+                <div class="mt-8 md:mt-12">
+                    <div class="section-heading mb-6">Frequently Asked Questions (FAQ)</div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            When will the online application for IB MTS Recruitment 2025 Start?
+                        </div>
+                        <div class="faq-answer">
+                            The online application for this recruitment has started on <strong>22 November 2025</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the last date for online application for IB MTS Online Form 2025?
+                        </div>
+                        <div class="faq-answer">
+                            The last date for online application submission is <strong>14 December 2025</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the age limit for Intelligence Bureau (IB) MTS Bharti 2025?
+                        </div>
+                        <div class="faq-answer">
+                            The minimum age is <strong>18 Years</strong> and the maximum age is <strong>25 years</strong> as on 14 December 2025.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the official website for IB?
+                        </div>
+                        <div class="faq-answer">
+                            The official website is <a href="https://www.mha.gov.in/notifications/vacancies" class="text-blue-600 hover:underline">https://www.mha.gov.in/notifications/vacancies</a>.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-gray-900 text-gray-400 mt-auto py-6 md:py-8 text-center text-sm border-t-4 border-yellow-500">
+        <div class="container mx-auto px-4">
+            <p class="mb-4 text-gray-300 font-medium">&copy; 2025 Sarkari result.</p>
+            <p class="text-xs text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                Disclaimer: This website is not associated with any Official or Government Websites. All information provided is for general informational purposes only. Users are advised to verify information from official notifications of the concerning department before relying on it. If any errors are found in the uploaded content, please notify us through our Contact Us page.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
